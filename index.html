@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Github</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img id="profile-avatar" class="profile-avatar" src="imagens/1.png" alt="Avatar">
+            <h1 id="profile-name" class="profile-name">Bruno Antunes Borges</h1>
+            <h2 id="profile-username" class="profile-username">@BrunooAntunees</h2>
+            <ul class="numbers">
+                <li class="numbers-item">
+                    <h4>Repositórios</h4>
+                    <span id="profile-repos">0</span>
+                </li>
+                <li class="numbers-item">
+                    <h4>Seguidores</h4>
+                    <span id="profile-followers">0</span>
+                </li>
+                <li class="numbers-item">
+                    <h4>Seguindo</h4>
+                    <span id="profile-following">0</span>
+                </li>
+            </ul>
+            <a id="profile-link" href="https://github.com/BrunooAntunees" class="profile-link" target="_blank">Ver no Github</a>
+        </div>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            const endpoint = 'https://api.github.com/users/BrunooAntunees';
+
+            try {
+                const resposta = await fetch(endpoint);
+
+                if (!resposta.ok) {
+                    throw new Error('Não foi possível buscar as informações do usuário.');
+                }
+
+                const json = await resposta.json();
+
+                document.getElementById('profile-name').innerText = json.name || 'Bruno Antunes Borges';
+                document.getElementById('profile-username').innerText = `@${json.login}`;
+                document.getElementById('profile-repos').innerText = json.public_repos;
+                document.getElementById('profile-followers').innerText = json.followers;
+                document.getElementById('profile-following').innerText = json.following;
+
+            } catch (erro) {
+                console.error('Ocorreu um erro:', erro);
+                alert('Ocorreu um erro ao carregar os dados do GitHub.');
+            }
+        });
+    </script>
+</body>
+</html>

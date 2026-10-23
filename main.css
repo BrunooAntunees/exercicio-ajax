@@ -1,0 +1,106 @@
+:root {
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --accent-gold: #c59b27;
+}
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+body {
+    /* Fundo claro, suave e luminoso com um degradê subtil */
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 550px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: var(--card-bg);
+    text-align: center;
+    padding: 45px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+    border: 1px solid #cbd5e1;
+}
+
+.profile-avatar {
+    border-radius: 50%;
+    margin-bottom: 20px;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border: 4px solid #d4af37;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.25);
+}
+
+.profile-name {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.profile-username {
+    margin: 8px 0 24px;
+    font-size: 1.1em;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.numbers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    background-color: #f8fafc;
+    padding: 18px 10px;
+    border-radius: 14px;
+    margin-bottom: 24px;
+    border: 1px solid #e2e8f0;
+}
+
+.numbers-item {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: var(--text-main);
+}
+
+.numbers-item h4 {
+    font-size: 0.55em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+.profile-link {
+    background: linear-gradient(135deg, #d4af37 0%, #b8972e 100%);
+    color: #ffffff;
+    padding: 12px 30px;
+    display: inline-block;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.profile-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45);
+    background: linear-gradient(135deg, #dfbc44 0%, #c5a234 100%);
+}
